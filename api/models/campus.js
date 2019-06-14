@@ -1,19 +1,16 @@
 const Sequelize = require('sequelize')
 const db = require('../../config/database')
 
-const Student = db.define('student', {
-    firstName: {
+const Campus = db.define('campu', {
+    campusName: {
         type: Sequelize.STRING,
        
     },
-    lastName: {
-        type: Sequelize.STRING
+    studentCount: {
+        type: Sequelize.INTEGER
     },
     description: {
         type: Sequelize.STRING
-    },
-    EMPID: {
-        type: Sequelize.INTEGER
     },
     imageURL: {
         type: Sequelize.INTEGER
@@ -21,4 +18,4 @@ const Student = db.define('student', {
 
 })
 
-module.exports = Student
+module.exports = Campus

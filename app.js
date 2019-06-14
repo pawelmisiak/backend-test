@@ -4,6 +4,7 @@ const Sequelize = require('sequelize');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const StudentRoute = require('./api/routes/student')
+const CampusRoute = require('./api/routes/campuses')
 
 //DATABASE
 const db = require('./config/database')
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
 
 
 app.use('/students', StudentRoute)
-
+app.use('/campuses', CampusRoute)
 
 
 module.exports = app;
