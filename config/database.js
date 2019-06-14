@@ -1,7 +1,9 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 
-                            //databaseName, username, password
-module.exports = new Sequelize('postgres', 'postgres', '123', {
-    host: 'localhost',
-    dialect:  'postgres' 
-  });
+module.exports = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  protocol: "postgres",
+  dialectOptions: {
+    ssl: true
+  }
+});
